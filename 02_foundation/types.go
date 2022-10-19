@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
-	"strings"
 	"reflect"
+	"strings"
 )
 
 func main() {
@@ -18,6 +18,5 @@ func main() {
 	fmt.Println(reflect.TypeOf(true))
 	fmt.Println(reflect.TypeOf(name))
 	fmt.Println(reflect.TypeOf(15))
-
 
 }

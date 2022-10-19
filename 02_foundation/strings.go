@@ -6,10 +6,10 @@ import (
 )
 
 func main() {
-	fmt.Println("Replace substring");
-	broken := "from var";
-	replacer := strings.NewReplacer("from", "to");
-	fmt.Println(replacer.Replace(broken));
+	fmt.Println("Replace substring")
+	broken := "from var"
+	replacer := strings.NewReplacer("from", "to")
+	fmt.Println(replacer.Replace(broken))
 
 	// Количество символов
 	var s string
@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(len([]rune(s)))
 
 	// Удаление пробелов и переводов строк
-	s = "\t trimed \n \n \n";
-	s = strings.TrimSpace(s);
+	s = "\t trimed \n \n \n"
+	s = strings.TrimSpace(s)
 	fmt.Println(s)
 }
