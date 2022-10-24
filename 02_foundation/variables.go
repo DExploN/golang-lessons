@@ -40,4 +40,13 @@ func main() {
 	b, c := 3, 4
 	fmt.Println(a, b, c)
 
+
+	var array [5]string
+	array[2] = "privet"
+	fmt.Println(array)
+
+	var array2 [2]string = [2]string{"one", "two"}
+	fmt.Println(array2)
+	fmt.Printf("Types: %T \n", array2) //Types: float64 string boo
+
 }
