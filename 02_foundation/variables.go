@@ -40,7 +40,7 @@ func main() {
 	b, c := 3, 4
 	fmt.Println(a, b, c)
 
-
+	// array 
 	var array [5]string
 	array[2] = "privet"
 	fmt.Println(array)
@@ -48,5 +48,23 @@ func main() {
 	var array2 [2]string = [2]string{"one", "two"}
 	fmt.Println(array2)
 	fmt.Printf("Types: %T \n", array2) //Types: float64 string boo
+
+	// slice 
+
+	var slice []int
+	slice = make([]int,7)
+	slice[3] = 6
+	slice2 := slice[2:6]
+	slice2[2] = 3
+	fmt.Println(slice,slice2) // меняются оба слайса
+
+	slice3 := append(slice, 7);
+	fmt.Println(slice3)
+	slice3[0] = 1 
+	fmt.Println(slice, 	slice3)
+
+	var slice4 []int
+	slice4 = append(slice4, 2)
+	fmt.Println(slice4) 
 
 }
