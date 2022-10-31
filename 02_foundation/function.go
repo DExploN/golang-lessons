@@ -7,6 +7,11 @@ var zero int;
 func main() {
 	zero = 3
 	println(sum(1,2))
+
+	println(sumManyIntegers(1,3,5))
+
+	arr:= []int{1,2,3,4,5}
+	println(sumManyIntegers(arr...))
 }
 
 func sum(first int, second int) int {
@@ -20,4 +25,13 @@ func cube(first int)(int, error){
 	}else{
 		return result, nil
 	}
+}
+
+
+func sumManyIntegers(integers ...int) int {
+	result := 0
+	for _, integers:= range integers{
+		result+=integers
+	}
+	return result
 }

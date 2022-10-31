@@ -67,4 +67,28 @@ func main() {
 	slice4 = append(slice4, 2)
 	fmt.Println(slice4) 
 
+	// map 
+
+	var firstMap map[string]int
+	firstMap = make(map[string]int)
+	firstMap["one"] = 1
+	println(firstMap["one"])
+	if val, ok := firstMap["two"] ; ok {
+		println("Exists", val)
+	}else{
+		println("No exists")
+
+	}
+
+	one, two := firstMap["one"]
+	println(one, two)
+
+	secondMap := map[string]int{"name": 123}
+
+	println(secondMap["name"])
+	
+	delete(secondMap, "name")
+	
+	println(secondMap["name"])
+
 }
