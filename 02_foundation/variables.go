@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"math"
 )
+
 
 func main() {
 	// Объявление переменной
@@ -91,4 +93,38 @@ func main() {
 	
 	println(secondMap["name"])
 
+	// struct
+
+	var firstStruct struct{
+		name string
+		age int
+	}
+
+	firstStruct.age = 123
+	firstStruct.name = "Fedor"
+	fmt.Println("Struct age: " + strconv.Itoa(firstStruct.age))
+
+	
+	var secondStruct secondStructType
+	secondStruct.name = "Egor"
+	fmt.Println("Struct name: " + secondStruct.name)
+	fmt.Println("Struct name from getter: " + secondStruct.getName())
+	secondStruct.setName("ne Egor")
+	fmt.Println("Struct name after setter: " + secondStruct.getName())
+
+
+}
+
+
+type secondStructType struct{
+	name string
+	age int
+}
+
+func (r secondStructType) getName () string {
+	return r.name
+}
+
+func (r *secondStructType) setName (newName string) {
+	r.name = newName
 }
