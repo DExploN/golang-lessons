@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"strconv"
 	"math"
+	"encoding/json"
 )
 
 
@@ -113,12 +114,27 @@ func main() {
 	fmt.Println("Struct name after setter: " + secondStruct.getName())
 
 
+	thirdSecondType := jsonType{Name: "new name", Age: 15}
+	res , _:= json.Marshal(thirdSecondType)
+	fmt.Println(string(res))
+	
+
+	
+
+	var newHellInt hellInt
+	newHellInt = 12
+	fmt.Println(newHellInt)
 }
 
 
 type secondStructType struct{
 	name string
 	age int
+}
+
+type jsonType struct{
+	Name string `json:"name"`
+	Age int `json:"fieldNameForAge"`
 }
 
 func (r secondStructType) getName () string {
@@ -128,3 +144,5 @@ func (r secondStructType) getName () string {
 func (r *secondStructType) setName (newName string) {
 	r.name = newName
 }
+
+type hellInt int;
