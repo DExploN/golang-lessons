@@ -124,6 +124,15 @@ func main() {
 	var newHellInt hellInt
 	newHellInt = 12
 	fmt.Println(newHellInt)
+
+	fmt.Println("Child")
+
+	childVar := child{parent: parent{age: 2}}
+
+	fmt.Println(childVar.age)
+
+	runingMan := runner{name: "Elvis"};
+	executeRunner(runingMan)
 }
 
 
@@ -146,3 +155,36 @@ func (r *secondStructType) setName (newName string) {
 }
 
 type hellInt int;
+
+type child struct{
+	name string
+	parent
+}
+
+type parent struct{
+	age int
+}
+
+type IMakeRun interface{
+	run()
+}
+
+type runner struct{
+	name string
+}
+
+func (r runner) run(){
+	fmt.Println(r.name, "run")
+}
+
+func (r runner) walk(){
+	fmt.Println("I am walking")
+}
+// Определение опреленного типа из интерфейса
+func executeRunner(r IMakeRun){
+	r.run()
+	walker, ok :=  r.(runner)
+	if ok {
+		walker.walk()
+	}
+}
